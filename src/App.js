@@ -2,13 +2,25 @@ import logo from './logo.svg';
 import './App.css';
 
 function App() {
-  const nyoks = ['Rubel','Bapparaz','Koobor']
+  const nayoks = ['Rubel','Bapparaz','Koobor'];
+  
+  const cinemas =[
+    {nayok:'Koober',nayika:'Kopila'},
+    {nayok:'Rubel',nayika:'Moushumi'},
+    {nayok:'Razzak',nayika:'Shabana'},
+    {nayok:'Joshim',nayika:'Sucorita'},
+  ]
   return (
     <div className="App">
-      <Friend phone="019838" address="Noakhali"></Friend>
-      <Friend phone="017234345" address="Ongpur"></Friend>
-      <Friend phone="016344345" address="Josor Road"></Friend>
-      <Friend phone="015234234" address="Dhaka"></Friend>
+      <ul>
+        {
+          nayoks.map(nayok => <li>{nayok}</li>)
+        }
+      </ul>
+      {/* <Cinema nayok="Jems bond" nayika="cat w"></Cinema> */}
+      {
+        cinemas.map(cinema =><Cinema nayok={cinema.nayok} nayika={cinema.nayika}></Cinema>)
+      }
     </div>
   );
 }
@@ -28,6 +40,15 @@ function Me(props){
     <h4>Profession: Nothing</h4>
   </div>
   );
+}
+
+function Cinema(props){
+  return (
+    <div className="Me">
+      <h2>Nayok: {props.nayok}</h2>
+      <h4>Nayika: {props.nayika}</h4>
+    </div>
+  )
 }
 
 function Friend(props){
