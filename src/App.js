@@ -2,44 +2,40 @@ import logo from './logo.svg';
 import './App.css';
 
 function App() {
-  const singer ={
-    name:'mahfuz rahman',
-    job:'singer'
-  }
-
-  const singerStyle={
-    backgroundColor:'red',
-    color:'white'
-  }
+  const nyoks = ['Rubel','Bapparaz','Koobor']
   return (
     <div className="App">
-      <header className="App-header">
-        <div className="container">
-          <h3>Hi React</h3>
-          <p style={singerStyle}>Singer name: {singer.name} {singer.job}</p>
-          <p style={
-            {
-              backgroundColor:'#194d33',
-              color:'white',
-              fontSize:'24px'
-            }
-          }>Singer name: {singer.name} {singer.job}</p>
-        </div>
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Friend phone="019838" address="Noakhali"></Friend>
+      <Friend phone="017234345" address="Ongpur"></Friend>
+      <Friend phone="016344345" address="Josor Road"></Friend>
+      <Friend phone="015234234" address="Dhaka"></Friend>
     </div>
   );
 }
 
+function Me(props){
+  console.log(props)
+  const person = {
+    backgroundColor:'skyblue',
+    border:'3px solid lightsalmon',
+    matgin:'20px',
+    borderRadius:'20px'
+
+  }
+  return ( 
+  <div style={person}>
+    <h1>Name: {props.name}</h1>
+    <h4>Profession: Nothing</h4>
+  </div>
+  );
+}
+
+function Friend(props){
+  return (
+    <div className="Me">
+      <h3>Phone: {props.phone}</h3>
+      <h5>Address: {props.address}</h5>
+    </div>
+  );
+}
 export default App;

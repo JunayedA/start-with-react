@@ -42,3 +42,10 @@
   padding: 20px;
   border-radius: 20px;
 }
+
+.Me {
+  background-color: cadetblue;
+  border: 3px solid lightcoral;
+  border-radius: 20px;
+  margin: 10px;
+}
